@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>css_animacija</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #050210;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .ring {
+      width: 500px;
+      height: 500px;
+      border: 50px solid transparent;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #161518, #241e1e);
+      position: relative;
+      animation: roll 2s infinite linear, changeColor 4s infinite linear;
+      overflow: hidden;
+    }
+
+    @keyframes roll {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes changeColor {
+      0% {
+        border-top-color: #fb5dad;
+        border-bottom-color: #b97aff;
+        border-right-color: #55fb9f;
+      }
+
+      33.33% {
+        border-top-color: #fb5dad;
+        border-bottom-color: #55fb9f;
+        border-left-color: #b97aff;
+      }
+
+      66.66% {
+        border-top-color: #b97aff;
+        border-bottom-color: #fb5dad;
+        border-right-color: #55fb9f;
+      }
+
+      100% {
+        border-top-color: #fb5dad;
+        border-bottom-color: #b97aff;
+        border-left-color: #55fb9f;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ring"></div>
+</body>
+
+</html>
